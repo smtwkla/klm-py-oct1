@@ -21,9 +21,11 @@ def calc_determinant(a):
         sign = 1
 
         for i in range(order):
-            r = [1, 2]
+            r = [x for x in range(order) if x != 0]
             c = [y for y in range(order) if y != i]
             sub_m = get_sub_matrix(a, r, c)
+            print("Sub matrix:")
+            print(sub_m)
             d = calc_determinant(sub_m)
             det_sum += a[0][i] * d * sign
             sign = sign * -1

@@ -22,7 +22,12 @@ def test_sub_matrix():
     assert g == [[2, 3], [8, 9]]
 
 
-def test_calc_determinant():
+def test_calc_determinant4x4():
+    m = [[1, 2, 3, 4], [0, 6, 7, 8], [9, 10, 11, 12], [0, 0, 1, 19]]
+    assert calc_determinant(m) == -680
+
+
+def test_calc_determinant3x3():
     m = [[1, 2], [4, 5]]
     assert calc_determinant(m) == -3
     print("2x2 success.")
@@ -39,4 +44,5 @@ def test_calc_determinant():
 if __name__ == "__main__":
     test_check_square_matrix()
     test_sub_matrix()
-    test_calc_determinant()
+    #test_calc_determinant3x3()
+    test_calc_determinant4x4()
