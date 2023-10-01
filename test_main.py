@@ -21,15 +21,22 @@ def test_sub_matrix():
     g = get_sub_matrix(m,[0,2],[1,2])
     assert g == [[2, 3], [8, 9]]
 
+
 def test_calc_determinant():
     m = [[1, 2], [4, 5]]
+    assert calc_determinant(m) == -3
+    print("2x2 success.")
+    m = [[5, 6], [8, 9]]
     assert calc_determinant(m) == -3
 
     m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     assert calc_determinant(m) == 0
 
+    m = [[10, 20, 30], [14, 15, 16], [77, 78, 0]]
+    assert calc_determinant(m) == 10270
+
 
 if __name__ == "__main__":
     test_check_square_matrix()
     test_sub_matrix()
-    #test_calc_determinant()
+    test_calc_determinant()
