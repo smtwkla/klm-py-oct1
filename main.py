@@ -7,11 +7,8 @@ def check_square_matrix(m):
 
 
 def get_sub_matrix(matrix, rows, cols):
-    m = []
-    for i in rows:
-        r = [matrix[i][x] for x in cols]
-        m.append(r)
-    return m
+    r = [[matrix[i][x] for x in cols]for i in rows]
+    return r
 
 
 def calc_determinant(a):

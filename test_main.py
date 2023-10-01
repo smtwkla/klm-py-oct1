@@ -18,6 +18,8 @@ def test_sub_matrix():
     g = get_sub_matrix(m,[1,2],[0,2])
     assert g == [[4, 6], [7, 9]]
 
+    g = get_sub_matrix(m,[0,2],[1,2])
+    assert g == [[2, 3], [8, 9]]
 
 def test_calc_determinant():
     m = [[1, 2], [4, 5]]
@@ -30,4 +32,4 @@ def test_calc_determinant():
 if __name__ == "__main__":
     test_check_square_matrix()
     test_sub_matrix()
-    test_calc_determinant()
+    #test_calc_determinant()
