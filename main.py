@@ -32,4 +32,25 @@ def calc_determinant(a):
         return det_sum
 
 
+def cof(m):
+    order = len(m)
+    sign = 1
+    A = []
+    for j in range(order):
+        n = []
+        row = [x for x in range(order) if x != j]
+        for i in range(order):
+            col = [y for y in range(order) if y != i]
+            det = calc_determinant(get_sub_matrix(m, row, col))
+            n.append(det*sign)
+            sign = sign*-1
+        A.append(n)
+    return A
 
+
+def transpose(m):
+    return [[m[i][j] for i in range(len(m[0]))] for j in range(len(m))]
+
+
+def adj(m):
+    return transpose(cof(m))

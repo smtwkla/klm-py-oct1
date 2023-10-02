@@ -1,5 +1,5 @@
 
-from main import check_square_matrix, get_sub_matrix, calc_determinant
+from main import check_square_matrix, get_sub_matrix, calc_determinant, cof, transpose, adj
 
 
 def test_check_square_matrix():
@@ -42,7 +42,15 @@ def test_calc_determinant3x3():
 
 
 if __name__ == "__main__":
-    test_check_square_matrix()
-    test_sub_matrix()
+    #test_check_square_matrix()
+    #test_sub_matrix()
     #test_calc_determinant3x3()
-    test_calc_determinant4x4()
+    #test_calc_determinant4x4()
+
+    m = [
+        [10, 20, 30],
+        [14, 15, 16],
+        [77, 78, 0]
+        ]
+    A = adj(m)
+    print(A)
