@@ -24,8 +24,7 @@ def calc_determinant(a):
             r = [x for x in range(order) if x != 0]
             c = [y for y in range(order) if y != i]
             sub_m = get_sub_matrix(a, r, c)
-            print("Sub matrix:")
-            print(sub_m)
+
             d = calc_determinant(sub_m)
             det_sum += a[0][i] * d * sign
             sign = sign * -1
@@ -54,3 +53,9 @@ def transpose(m):
 
 def adj(m):
     return transpose(cof(m))
+
+
+def inverse(m):
+    det=calc_determinant(m)
+    A=adj(m)
+    return [[(A[j][i])/det for i in range(len(A[0]))] for j in range(len(A))]
